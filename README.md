@@ -224,57 +224,6 @@ e) You should continue the execution based on the example provided in the Datapa
 
 each package reﬂecting the diﬀerent stages working in parallel.
 
-13
-
-
 
 
 <a name="br14"></a>f) The Clock Cycles can be simulated as a variable that is incremented after ﬁnishing the required stages at a given time.
-
-• Example:
-
-fetch ( ) ; decode ( ) ; execute ( ) ; // memory ( ) ;
-
-// writeback ( ) ;
-
-c y c l e s ++;
-
-Printings
-
-The following items must be printed in the console after each Clock Cycle:
-
-a) The Clock Cycle number.
-
-b) The Pipeline stages:
-
-• Which instruction is being executed at each stage?
-
-• What are the input parameters/values for each stage?
-
-c) The updates occurring to the registers in case a register value was changed.
-
-d) The updates occurring in the memory (data segment of main memory or data memory according to your package) in case a value was stored or updated in the memory.
-
-e) The content of all registers after the last clock cycle.
-
-f) The full content of the memory (main memory or instruction and data memories according to your
-
-package) after the last clock cycle.
-
-Submission
-
-You should submit a ZIP ﬁle to the course email containing the following items:
-
-• All “.java” code ﬁles used in the project.• Any additional library used.
-
-• A text ﬁle containing the team number, team name, package number and name, and team members’
-
-names, IDs, and tutorials.
-
-The ZIP ﬁle should be named in the following format: Team\_[TeamNumber]\_[PackageNumber] - PackageNumber = {1, 2, 3, or 4} based on the selected/assigned project.
-
-Email Subject: Team\_[TeamNumber]\_[PackageNumber] Example: Team\_15\_2
-
-Submission Email: <csen601.2023@gmail.com>
-
-14
