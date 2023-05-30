@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Array;
 import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 public class CPU {
 	boolean jump=false;
@@ -19,16 +20,15 @@ public class CPU {
 	ArrayList<Object> MemoryToWritePipelineRegister;
 	
 	
-
 	public CPU() {
 		
 		
-		
-		parser("ashrabShay.txt");
+		Arrays.fill(registers,(byte) 0);
+		useParser("assemblyProgram.txt");
 		start();
 	}
 	
-	private  void parser(String filePath) {
+	private  void useParser(String filePath) {
 		ArrayList<String[]> lines = new ArrayList<>();
 
 		BufferedReader reader = null;
@@ -100,9 +100,9 @@ public class CPU {
 	    }
 	    System.out.println("Register content (non-null values):");
         for (int i = 0; i < registers.length; i++) {
-            if (registers[i] != null) {
+//            if (registers[i] != null) {
                 System.out.println("Content of R" + i + ": " + registers[i]);
-            }
+//            }
         }
         System.out.println("/------------------------------------------");
         System.out.println("Instruction Memory content (non-null values):");
@@ -145,7 +145,7 @@ public class CPU {
 	    Byte opcode;
 	    Byte r1;
 	    Byte r2;
-	    Byte imm;
+	    Byte imm;          
 	    short pc;
 
 	    opcode = Byte.parseByte(instruction.get(0).substring(0, 4), 2);
@@ -277,6 +277,7 @@ public class CPU {
 	        case 3:
 	            System.out.println("Executing: MOVEI " + iOperands);
 	            // Use ALU
+	           
 	            ALUOutput = moveImm(imm);
 	            ExecuteToMemoryPipelineRegister.add(r1);
 	            ExecuteToMemoryPipelineRegister.add(ALUOutput);
@@ -566,7 +567,8 @@ public class CPU {
 			programCounter = pc + 1 + imm  ;
 			
 			jump = true;
-		}
+		}                         
+		                           
 	}
 	public void branchReg(byte value1, byte value2) {
 	
@@ -588,8 +590,8 @@ public class CPU {
 	}
 	public byte ShiftArithmeticRight(byte num1, byte num2) {
 		
-		
-		byte temp =  (byte) (num1 >> num2);
+		//byte temp =  (byte) (num1 >> num2);
+		byte temp = (byte)(int)(num1 /(Math.pow(2,num2)));
 		// Check Negative Sign 
 		setNegativeFlag(temp);
 		// Check Zero
@@ -691,12 +693,15 @@ public class CPU {
 	public void setTwoComplementOverflowFlag(byte num1 , byte num2) {
 		
 		//get bits 8 and 7 from num1 and num2
+		
 		boolean isSet7 = ((num1 >> 6) & 1) == 1;
 		boolean aisSet7 = ((num2 >> 6) & 1) == 1;
 		boolean isSet8 = ((num1 >> 7) & 1) == 1;
 		boolean aisSet8 = ((num2 >> 7) & 1) == 1;
 		
-		//get carry 7 and 8
+		//get carry 7 and 8                        
+		                                           
+		                                            
 		boolean carry7 = isSet7&&aisSet7;
 		boolean carry8 = ((carry7&&isSet8) || (carry7&&aisSet8) || (aisSet8&&isSet8));
 
@@ -706,8 +711,10 @@ public class CPU {
 		else 
 			statusReg[3] = 0;	
  
-		
-	}
+	}               
+	               
+	               
+	                
 	
 	public void setCarryFlag(byte a, byte b) {
 		int temp1 = a & 0x000000FF;
