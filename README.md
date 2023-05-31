@@ -7,9 +7,15 @@ Deadline: Saturday 27/05/2023 at 11:59 pm
 
 Project Overview
 
-“Processor design is the design engineering task of creating a processor, a key component of computerhardware. The design process involves choosing an instruction set and a certain execution paradigm,and results in a microarchitecture. The mode of operation of any processor is the execution of lists ofinstructions. Instructions typically include those to compute or manipulate data values using registers,change or retrieve values in read/write memory, perform relational tests between data values and tocontrol program ﬂow.”
+“Processor design is the design engineering task of creating a processor, a key component of computer
+hardware. The design process involves choosing an instruction set and a certain execution paradigm,
+and results in a microarchitecture. The mode of operation of any processor is the execution of lists of
+instructions. Instructions typically include those to compute or manipulate data values using registers,
+change or retrieve values in read/write memory, perform relational tests between data values and to
+control program ﬂow.”
 
-` `In this project, you will simulate a ﬁctional processor design and architecture using Java. You are askedto choose one of four processor packages described in the upcoming sections.
+` `In this project, you will simulate a ﬁctional processor design and architecture using Java. You are asked
+to choose one of four processor packages described in the upcoming sections.
 
 Harvard
 
@@ -17,15 +23,19 @@ Harvard
 
 a) Architecture: Harvard
 
-• Harvard Architecture is the digital computer architecture whose design is based on the concept where there are separate storage and separate buses (signal path) for instruction and data. It was basically developed to overcome the bottleneck of Von Neumann Architecture.
+• Harvard Architecture is the digital computer architecture whose design is based on the concept
+ where there are separate storage and separate buses (signal path) for instruction and
+ data. It was basically developed to overcome the bottleneck of Von Neumann Architecture.
 
 b) Instruction Memory Size: 1024 \* 16
 
-Instruction Memory 16 Bits / Row
+Instruction Memory
+ 16 Bits / Row
 
 1024 Rows
 
-• The instruction memory addresses are from 0 to 210 − 1 (0 to 1023). • Each memory block (row) contains 1 word which is 16 bits (2 bytes).
+• The instruction memory addresses are from 0 to 210 − 1 (0 to 1023).
+ • Each memory block (row) contains 1 word which is 16 bits (2 bytes).
 
 10
 
@@ -38,11 +48,13 @@ Instruction Memory 16 Bits / Row
 
 c) Data Memory Size: 2048 \* 8
 
-Data Memory 8 Bits / Row
+Data Memory
+ 8 Bits / Row
 
 2048 Rows
 
-• The data memory addresses are from 0 to 211 − 1 (0 to 2047). • Each memory block (row) contains 1 word which is 8 bits (1 byte).
+• The data memory addresses are from 0 to 211 − 1 (0 to 2047).
+ • Each memory block (row) contains 1 word which is 8 bits (1 byte).
 
 • The data memory is word/byte addressable (1 word = 1 byte).
 
@@ -82,21 +94,26 @@ of the most signiﬁcant bit position.
 
 operation is too large, causing the high-order bit to overﬂow into the sign bit.
 
-· If 2 numbers are added, and they both have the same sign (both positive or both negative), then overﬂow occurs (V = 1) if and only if the result has the opposite sign. Overﬂow never occurs when adding operands with diﬀerent signs.
+· If 2 numbers are added, and they both have the same sign (both positive or both
+ negative), then overﬂow occurs (V = 1) if and only if the result has the opposite
+ sign. Overﬂow never occurs when adding operands with diﬀerent signs.
 
-· If 2 numbers are subtracted, and their signs are diﬀerent, then overﬂow occurs (V = 1) if and only if the result has the same sign as the subtrahend.
+· If 2 numbers are subtracted, and their signs are diﬀerent, then overﬂow occurs (V
+ = 1) if and only if the result has the same sign as the subtrahend.
 
 · The diﬀerence between carry and overﬂow is explained in: [https://piazza.com/](https://piazza.com/class/le8zgqxowmd6e7/post/18)
 
 [class/le8zgqxowmd6e7/post/18](https://piazza.com/class/le8zgqxowmd6e7/post/18)
 
-∗ Negative Flag (N): Indicates a negative result in an arithmetic or logic operation. · N = 1 if result is negative.
+∗ Negative Flag (N): Indicates a negative result in an arithmetic or logic operation.
+ · N = 1 if result is negative.
 
 · N = 0 if result is positive or zero.
 
 ∗ Sign Flag (S): Indicates the expected sign of the result (not the actual sign).
 
-` `· S = N ⊕ V (XORing the negative and overﬂow ﬂags will calculate the sign ﬂag).∗ Zero Flag (Z): Indicates that the result of an arithmetic or logical operation was zero.
+` `· S = N ⊕ V (XORing the negative and overﬂow ﬂags will calculate the sign ﬂag).
+∗ Zero Flag (Z): Indicates that the result of an arithmetic or logical operation was zero.
 
 · Z = 1 if result is 0.
 
@@ -113,7 +130,9 @@ the ﬂags, you are required to keep Bits7:5 cleared “0” at all times in the
 
 – Name: PC
 
-– Type: Special-purpose register with a size of 16 bits (not 8 bits).– A program counter is a register in a computer processor that contains the address (loca- tion) of the instruction being executed at the current time.
+– Type: Special-purpose register with a size of 16 bits (not 8 bits).
+– A program counter is a register in a computer processor that contains the address (loca-
+ tion) of the instruction being executed at the current time.
 
 – As each instruction gets fetched, the program counter is incremented to point to the next
 
@@ -139,9 +158,14 @@ c) Instruction Count: 12
 
 • The opcodes are from 0 to 11 according to the instructions order in the following table:
 
-` `Name Mnemonic Type Format OperationAdd ADD R ADD R1 R2 R1 = R1 + R2Subtract SUB R SUB R1 R2 R1 = R1 - R2Multiply MUL R MUL R1 R2 R1 = R1 \* R2Move Immediate MOVI I MOVI R1 IMM R1 = IMM
+` `Name Mnemonic Type Format Operation
+Add ADD R ADD R1 R2 R1 = R1 + R2
+Subtract SUB R SUB R1 R2 R1 = R1 - R2
+Multiply MUL R MUL R1 R2 R1 = R1 \* R2
+Move Immediate MOVI I MOVI R1 IMM R1 = IMM
 
-Branch if Equal Zero BEQZ I BEQZ R1 IMM IF(R1 == 0) { PC = PC+1+IMM }
+Branch if Equal Zero BEQZ I BEQZ R1 IMM IF(R1 == 0) {
+ PC = PC+1+IMM }
 
 And Immediate ANDI I ANDI R1 IMM R1 = R1 & IMM
 
@@ -149,7 +173,10 @@ Exclusive Or EOR R EOR R1 R2 R1 = R1 ⊕ R2
 
 Branch Register BR R BR R1 R2 PC = R1 || R2
 
-` `Shift Arithmetic Left SAL I SAL R1 IMM R1 = R1 << IMMShift Arithmetic Right SAR I SAR R1 IMM R1 = R1 >> IMMLoad to Register LDR I LDR R1 ADDRESS R1 = MEM[ADDRESS] Store from Register STR I STR R1 ADDRESS MEM[ADDRESS] = R1
+` `Shift Arithmetic Left SAL I SAL R1 IMM R1 = R1 << IMM
+Shift Arithmetic Right SAR I SAR R1 IMM R1 = R1 >> IMM
+Load to Register LDR I LDR R1 ADDRESS R1 = MEM[ADDRESS]
+ Store from Register STR I STR R1 ADDRESS MEM[ADDRESS] = R1
 
 “||” symbol indicates concatenation (0100 || 1100 = 01001100).
 
@@ -165,7 +192,8 @@ instruction.
 
 • The Sign ﬂag (S) is updated every ADD and SUB instruction.
 
-• The Zero ﬂag (Z) is updated every ADD, SUB, MUL, ANDI, EOR, SAL, and SAR instruction.• A ﬂag value can only be updated by the instructions related to it.
+• The Zero ﬂag (Z) is updated every ADD, SUB, MUL, ANDI, EOR, SAL, and SAR instruction.
+• A ﬂag value can only be updated by the instructions related to it.
 
 12
 
@@ -186,44 +214,30 @@ address in the PC (Program Counter), and increments the PC.
 
 the register ﬁle.
 
-• Execute (EX): Executes the instruction. In fact, all ALU operations are done in this stage. Moreover, it performs any memory access required by the current instruction. For loads, it would load an operand from the main memory, while for stores, it would store an operand into the main memory. Finally, for instructions that have a result (a destination register), it writes this result back to the register ﬁle.
+• Execute (EX): Executes the instruction. In fact, all ALU operations are done in this stage.
+ Moreover, it performs any memory access required by the current instruction. For loads, it
+ would load an operand from the main memory, while for stores, it would store an operand into
+ the main memory. Finally, for instructions that have a result (a destination register), it writes
+ this result back to the register ﬁle.
 
 b) Pipeline: 3 instructions (maximum) running in parallel
 
-• Number of clock cycles: 3 + ((n − 1) ∗ 1), where n = number of instructions – Imagine a program with 7 instructions:
+ • Number of clock cycles: 3 + ((n − 1) ∗ 1), where n = number of instructions
+ – Imagine a program with 7 instructions:
 
-∗ 3 + (6 ∗ 1) = 9 clock cycles
+ ∗ 3 + (6 ∗ 1) = 9 clock cycle
 
-– You are required to understand the pattern in the example and implement it.
-
-Package 4 Pipeline
-
-Instruction Fetch Instruction Decode Execute (IF) (ID) (EX)
+ ∗ Instruction Fetch Instruction Decode Execute
+ (IF) (ID) (EX)
 
 Cycle 1 Instruction 1
 
 Cycle 2 Instruction 2 Instruction 1
 
-Cycle 3 Instruction 3 Instruction 2 Instruction 1Cycle 4 Instruction 4 Instruction 3 Instruction 2Cycle 5 Instruction 5 Instruction 4 Instruction 3Cycle 6 Instruction 6 Instruction 5 Instruction 4Cycle 7 Instruction 7 Instruction 6 Instruction 5Cycle 8 Instruction 7 Instruction 6Cycle 9 Instruction 7
-
-Guidelines
-
-The following guidelines must be followed in all packages:
-
-Program Flow
-
-a) You must write your program in assembly language in a text ﬁle.
-
-b) Your must read the instructions from the text ﬁle, and parse them according to their types/formats (opcode and other relevant ﬁelds).
-
-c) You must store the parsed version of the instructions in the memory (instruction segment of main memory or instruction memory according to your package).
-
-d) You should start the execution of your pipelined implementation by fetching the ﬁrst instruc- tion from the memory (instruction segment of main memory or instruction memory) at Clock Cycle 1.
-
-e) You should continue the execution based on the example provided in the Datapath section of
-
-each package reﬂecting the diﬀerent stages working in parallel.
-
-
-
-<a name="br14"></a>f) The Clock Cycles can be simulated as a variable that is incremented after ﬁnishing the required stages at a given time.
+Cycle 3 Instruction 3 Instruction 2 Instruction 1
+Cycle 4 Instruction 4 Instruction 3 Instruction 2
+Cycle 5 Instruction 5 Instruction 4 Instruction 3
+Cycle 6 Instruction 6 Instruction 5 Instruction 4
+Cycle 7 Instruction 7 Instruction 6 Instruction 5
+Cycle 8 Instruction 7 Instruction 6
+Cycle 9 Instruction 7
