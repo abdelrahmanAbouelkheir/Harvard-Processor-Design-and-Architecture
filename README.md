@@ -231,9 +231,15 @@ Cycle 1 Instruction 1
 Cycle 2 Instruction 2 Instruction 1
 
 Cycle 3 Instruction 3 Instruction 2 Instruction 1
+
 Cycle 4 Instruction 4 Instruction 3 Instruction 2
+
 Cycle 5 Instruction 5 Instruction 4 Instruction 3
+
 Cycle 6 Instruction 6 Instruction 5 Instruction 4
+
 Cycle 7 Instruction 7 Instruction 6 Instruction 5
+
 Cycle 8 Instruction 7 Instruction 6
+
 Cycle 9 Instruction 7
