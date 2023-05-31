@@ -224,7 +224,7 @@ b) Pipeline: 3 instructions (maximum) running in parallel
  ∗ 3 + (6 ∗ 1) = 9 clock cycle
 
  ∗ Instruction Fetch Instruction Decode Execute
- (IF) (ID) (EX)
+           (IF)            (ID)            (EX)
 
 Cycle 1 Instruction 1
 
