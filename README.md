@@ -10,7 +10,7 @@ instructions. Instructions typically include those to compute or manipulate data
 change or retrieve values in read/write memory, perform relational tests between data values and to
 control program ﬂow. ”
 
-` `In this project, you will simulate a ﬁctional processor design and architecture using Java. You are asked
+` `In this project, I simulated a ﬁctional processor design and architecture using Java. You are asked
 to choose one of four processor packages described in the upcoming sections.
 
 Harvard
