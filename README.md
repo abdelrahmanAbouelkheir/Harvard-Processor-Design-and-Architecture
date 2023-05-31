@@ -1,18 +1,14 @@
 
-Project Description
+# Project Description
+ 
+## Project Overview
 
-Processor X Meals
-
-Deadline: Saturday 27/05/2023 at 11:59 pm
-
-Project Overview
-
-“Processor design is the design engineering task of creating a processor, a key component of computer
+“ Processor design is the design engineering task of creating a processor, a key component of computer
 hardware. The design process involves choosing an instruction set and a certain execution paradigm,
 and results in a microarchitecture. The mode of operation of any processor is the execution of lists of
 instructions. Instructions typically include those to compute or manipulate data values using registers,
 change or retrieve values in read/write memory, perform relational tests between data values and to
-control program ﬂow.”
+control program ﬂow. ”
 
 ` `In this project, you will simulate a ﬁctional processor design and architecture using Java. You are asked
 to choose one of four processor packages described in the upcoming sections.
